@@ -15,7 +15,7 @@ int main()
 
     ftruncate(shmd, sizeof(int)); //as memory is fixed
     
-    count = (int *)mmap(NULL, sizeof(int), PROT_READ | PROT_WRITE, MAP_SHARED, shmd, 0);
+    count = (int *)mmap(NULL, sizeof(int), PROT_READ, MAP_SHARED, shmd, 0);
     while (1)
     {
        = grep ^M  /usr/share/dict/words
