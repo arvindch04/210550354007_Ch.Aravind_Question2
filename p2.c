@@ -5,19 +5,19 @@
 #include <unistd.h>
 #include <sys/types.h>
 
-int *count;
+char buff[128]
 
 int main()
 {
-    int shmd;
+    int shmd,i;
     shmd = shm_open("/key", O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
 
     ftruncate(shmd, sizeof(int));
     count = (int *)mmap(NULL, sizeof(int), PROT_READ | PROT_WRITE, MAP_SHARED, shmd, 0);
-    while (1)
+    while(buff[i] !='\0')
     {
-        printf("Count: %d\n", *count);  //observe that there is no num, we are just reading in p2 an writing in p1
-        sleep(1);
+       i++;
     }
+    printf("Length of string %s is %d", buff, i);
     return 0;
 }
