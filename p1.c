@@ -5,9 +5,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 
-int *count;
 
-int num;
 
 int main()
 {
